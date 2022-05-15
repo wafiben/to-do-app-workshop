@@ -1,8 +1,8 @@
 import React from "react";
 import { Toast } from "react-bootstrap";
-function CardTask({ task: { id, description, done }, index }) {
+function CardTask({ task: { id, description, done }, index,deleteTask }) {
   const handleClick=()=>{
-    alert(id)
+    deleteTask(id)
   }
   return (
     <Toast>

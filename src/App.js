@@ -12,15 +12,15 @@ function App() {
     setTasks([...tasks, task]);
   };
   const deleteTask=(id)=>{
-   /*  setTasks(tasks.filter((elt)=>elt.id!=id)) */
+     setTasks(tasks.filter((elt)=>elt.id!=id)) 
   }
   return (
     <div style={{ textAlign: "center" }}>
       <AddTask addTask={addTask} />
       <div style={{ marginLeft: "auto" }}>
-        {tasks.map((elt, index) => (
-          <CardTask key={elt.id} task={elt} index={index} />
-        ))}
+        { tasks.length>0 ?  tasks.map((elt, index) => (
+          <CardTask key={elt.id} task={elt} index={index} deleteTask={deleteTask}  />
+        )):'no task to show'}
       </div>
     </div>
   );
